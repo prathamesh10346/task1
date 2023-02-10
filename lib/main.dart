@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task1/screens/bottom_bar.dart';
 
-import 'home_page.dart';
+import 'screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
 
           ),
-      home: const Homepage(),
+      home: const BottomBar(),
     );
   }
 }
