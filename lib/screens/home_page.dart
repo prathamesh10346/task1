@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task1/utils/app_layout.dart';
 import 'package:task1/widgets/card_view.dart';
 import 'package:task1/widgets/listcategory.dart';
 
@@ -12,6 +13,8 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = Applayout.getSize(context);
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 237, 235, 235),
       body: SafeArea(
@@ -204,29 +207,31 @@ class Homepage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none),
                       hintText: 'Resturent, grocery, cafe, bar, cafes',
-                      hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
+                      hintStyle:
+                          const TextStyle(color: Colors.grey, fontSize: 18),
                       prefixIcon: Container(
-                          padding: EdgeInsets.all(15),
+                          padding: const EdgeInsets.all(15),
                           child: Row(
                             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            // ignore: prefer_const_literals_to_create_immutables
                             children: [
                               const Icon(
                                 Icons.search,
                                 color: Colors.grey,
                                 size: 28,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Text(
+                              const Text(
                                 'Resturent, grocery, cafe, bar...',
                                 style:
                                     TextStyle(color: Colors.grey, fontSize: 14),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 40,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.settings_input_component_sharp,
                                 color: Colors.grey,
                                 size: 18,
@@ -241,15 +246,34 @@ class Homepage extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.only(left: 20),
-              child: Row(
-                children: placesss
-                    .map((singletheatres) => TicketView(
-                          theatres: singletheatres,
-                        ))
-                    .toList(),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(255, 254, 254, 254),
+              ),
+              height: 350,
+              child: Column(
+                children: [
+                  SizedBox(height: 50),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: placesss
+                          .map((singletheatres) => TicketView(
+                                theatres: singletheatres,
+                              ))
+                          .toList(),
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color.fromARGB(255, 113, 85, 224),
+                    ),
+                  )
+                ],
               ),
             ),
           ],

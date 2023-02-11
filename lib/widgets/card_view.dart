@@ -75,19 +75,30 @@ class TicketView extends StatelessWidget {
                         ),
                       ),
                       Expanded(child: Container()),
-                      Icon(Icons.navigation, color: Colors.white),
+                      Transform.rotate(
+                        angle: 19.5,
+                        // ignore: prefer_const_constructors
+                        child: Icon(
+                          Icons.navigation,
+                          color: Color.fromARGB(255, 248, 248, 248),
+                          size: 19,
+                        ),
+                      ),
                       Center(
                         child: Text(theatres['state'],
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: Applayout.getHeight(16))),
                       ),
-                      // Text(
-                      //   theatres['state'],
-                      //   style: TextStyle(
-                      //       color: Colors.white,
-                      //       fontSize: Applayout.getHeight(1)),
-                      // ),
+                      SizedBox(
+                        width: Applayout.getWidth(3),
+                      ),
+                      Text(
+                        "Miles",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: Applayout.getHeight(14)),
+                      ),
                     ],
                   )
                 ],
@@ -95,7 +106,15 @@ class TicketView extends StatelessWidget {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(255, 15, 15, 15),
+                image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      Color.fromARGB(137, 54, 54, 54), BlendMode.darken),
+                  image: AssetImage(
+                    theatres['time'],
+                  ),
+                  fit: BoxFit.cover,
+                ),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(Applayout.getHeight(21)),
                     bottomRight: Radius.circular(Applayout.getHeight(21))),
@@ -111,29 +130,19 @@ class TicketView extends StatelessWidget {
                         children: [
                           Column(
                             children: [
-                              Text(
-                                theatres['Exact'],
-                              ),
+                              const Text(" "),
                               // const Gap(5),
                               Text(
-                                theatres['on'],
+                                theatres['Exact'],
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: Applayout.getHeight(20)),
                               )
                             ],
                           ),
                         ],
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            theatres['state'],
-                          ),
-                          // const Gap(5),
-                          Text(
-                            theatres['time'],
-                          )
-                        ],
-                      )
                     ],
                   )
                 ],
