@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/default_transitions.dart';
 import 'package:task1/screens/categoryscreen.dart';
 import 'package:task1/utils/app_layout.dart';
+import 'package:task1/widgets/Redeem_block.dart';
 import 'package:task1/widgets/card_view.dart';
 import 'package:task1/widgets/listcategory.dart';
 import 'package:task1/widgets/redeempoint_block.dart';
@@ -543,13 +544,13 @@ class Homepage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                // height: 40,
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                       // ignore: prefer_const_constructors
-                      children: [
+                      children: const [
                         Redeempoint_block(),
                         Redeempoint_block(),
                         Redeempoint_block(),
@@ -558,6 +559,21 @@ class Homepage extends StatelessWidget {
                       ]),
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                child: const Text("Top Redeem Outlets",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 110, 109, 109))),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              RedemBlock(),
+              RedemBlock(),
             ],
           ),
         ),
