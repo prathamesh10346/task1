@@ -51,10 +51,20 @@ class SmallBlock extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Color.fromARGB(255, 8, 8, 212),
                   ),
-                  child: const Icon(
-                    Icons.location_on,
-                    color: Color.fromARGB(255, 230, 229, 234),
-                    size: 28,
+                  child: Column(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Icon(
+                        Icons.location_on,
+                        color: Color.fromARGB(255, 230, 229, 234),
+                        size: 28,
+                      ),
+                      Text("we can add image here",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 230, 229, 234),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold)),
+                    ],
                   ),
                 ),
                 const SizedBox(
