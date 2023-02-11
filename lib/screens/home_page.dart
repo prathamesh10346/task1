@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:task1/widgets/card_view.dart';
+import 'package:task1/widgets/listcategory.dart';
 
 import '../utils/app_infolist.dart';
 // import 'lib\utils\app_infolist.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
+
+  // get places => ;
 
   @override
   Widget build(BuildContext context) {
@@ -174,55 +178,101 @@ class Homepage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
-            // Container(
-            //   height: 30,
-            //   children: Placeslist.map((e) => Listcategaory(places: e)).toList(),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: Placeslist.map((singletheatres) => Listcategaory(
+                      places: singletheatres,
+                    )).toList(),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Container(
+                height: 50,
+                child: TextField(
+                    cursorColor: Colors.grey,
+                    decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none),
+                      hintText: 'Resturent, grocery, cafe, bar, cafes',
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
+                      prefixIcon: Container(
+                          padding: EdgeInsets.all(15),
+                          child: Row(
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Icon(
+                                Icons.search,
+                                color: Colors.grey,
+                                size: 28,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Resturent, grocery, cafe, bar...',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14),
+                              ),
+                              SizedBox(
+                                width: 40,
+                              ),
+                              Icon(
+                                Icons.settings_input_component_sharp,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                            ],
 
-            // ),
-            // Container(
-            //   child: ListView(
-            //     scrollDirection: Axis.horizontal,
-            //     padding: const EdgeInsets.only(left: 20),
-            //     children:
-            //         Placeslist.map((e) => Listcategaory(places: e)).toList(),
-            //   ),
-            // ),
+                            // width: 18,
+                          )),
+                    )),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20),
+              child: Row(
+                children: placesss
+                    .map((singletheatres) => TicketView(
+                          theatres: singletheatres,
+                        ))
+                    .toList(),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-class Listcategaory extends StatelessWidget {
-  const Listcategaory({
-    super.key,
-    required this.places,
-  });
-
-  final Map<String, dynamic> places;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Container(
-            height: 20,
-            width: 100,
-            color: Color(0xFF242424),
-            child: Center(
-                child: Text(
-              places['from']['name'],
-              style: TextStyle(fontSize: 13, color: Colors.white),
-            )),
-          ),
-        ),
-      ],
-    );
-  }
-}
+// Container(
+//               // ignore: prefer_const_constructors
+//               child: Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
+//                 child: const TextField(
+//                   decoration: InputDecoration(
+//                     hintText: "Search",
+//                     prefixIcon: Icon(Icons.search),
+//                     border: OutlineInputBorder(
+//                       borderRadius: BorderRadius.all(
+//                         Radius.circular(10.0),
+//                         // Color(0xFE5E5E5),
+//                       ),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             )

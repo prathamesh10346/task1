@@ -2,6 +2,7 @@
     "cmake.sourceDirectory": "${workspaceFolder}/linux",
     "cSpell.words": [
         "Listcategaory",
-        "Placeslist"
+        "Placeslist",
+        "singletheatres"
     ]
 }
