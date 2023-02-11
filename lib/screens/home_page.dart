@@ -5,6 +5,7 @@ import 'package:task1/screens/categoryscreen.dart';
 import 'package:task1/utils/app_layout.dart';
 import 'package:task1/widgets/card_view.dart';
 import 'package:task1/widgets/listcategory.dart';
+import 'package:task1/widgets/redeempoint_block.dart';
 import 'package:task1/widgets/small_bloc.dart';
 
 import '../utils/app_infolist.dart';
@@ -541,6 +542,21 @@ class Homepage extends StatelessWidget {
               ),
               const SizedBox(
                 height: 20,
+              ),
+              Container(
+                // height: 40,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                      // ignore: prefer_const_constructors
+                      children: [
+                        Redeempoint_block(),
+                        Redeempoint_block(),
+                        Redeempoint_block(),
+                        Redeempoint_block(),
+                        Redeempoint_block(),
+                      ]),
+                ),
               ),
             ],
           ),
