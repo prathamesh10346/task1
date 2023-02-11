@@ -15,7 +15,7 @@ class TicketView extends StatelessWidget {
     final size = Applayout.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      height: Applayout.getHeight(200),
+      height: Applayout.getHeight(175),
       child: Container(
         height: Applayout.getHeight(50),
         margin: EdgeInsets.only(right: Applayout.getHeight(16)),
@@ -23,6 +23,13 @@ class TicketView extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 85, 84, 84),
+                    offset: Offset(0, 9),
+                    blurRadius: 10,
+                  ),
+                ],
                 color: Color.fromARGB(255, 15, 15, 15),
                 // color: isColor == null ? const Color(0xFF628395) : Colors.white,
                 borderRadius: BorderRadius.only(
